@@ -1,0 +1,493 @@
+.details-container{overflow: hidden; position: relative;}
+
+.details-container a{ color: #000; }
+.details-container a:hover{ color: #00000082; }
+
+
+.details-header{
+    width: 100%;
+    height: calc(100vh - 70px);
+    margin-top: 70px;
+    position: relative;
+}
+
+
+
+/* backdrop */
+.backdrop {
+    /* filter: blur(1px); */
+    /* background-position: left calc((50vw - 170px) - 340px) top; */
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.content{
+    width: 100%;
+    height: 100vh;
+    padding: 20px 30px;
+    background-color: #3939397a;
+    /* backdrop-filter: blur(3px); */
+
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    align-items: center;
+    /* gap: 100px; */
+}   
+
+.poster img{
+    border-radius: 10px;
+    box-shadow: 0 0 15px 3px #000;
+    transition: all .3s ease-in;
+    
+}
+
+.poster {
+    perspective: 1000px;
+}
+.poster img:hover{
+    transform: rotateY(10deg) scale(1.01);
+}
+
+.info{
+    color: #fff;
+}
+.info .title{
+    font-size: 2.1rem;
+    font-weight: bold;
+}
+.release-date{
+    font-size: 2rem;
+    color: #d9d9d9;
+}
+
+.info ul{
+    list-style: disc;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+}
+
+.movie-tagline{
+    color: #d9d9d9;
+    font-style: italic;
+}
+
+.info p{
+    line-height: 24px;
+}
+.info span{
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.people{
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.role span{
+    font-size: 1.1rem;
+}
+
+.role p{
+    font-size: .9rem;
+}
+
+.movie-title, .info ul, .movie-tagline, .movie-overview, .role{
+    margin-top: 20px;
+}
+
+/* credits & media */
+
+.credits h1, .media-header{
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.actors, .media{
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+/* .actors::-webkit-scrollbar, .media::-webkit-scrollbar {
+    display: none;              
+} */
+/* the credits section */
+
+.details-container .actors{
+    display: flex;
+    overflow-x: scroll;
+}
+.details-container .actor{
+    margin-right: 20px;
+    width: 140px;
+    min-height: 250px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    border: 1px solid #0000003e;
+    box-shadow:  0 0 10px #dedede;
+    overflow: hidden;
+
+}
+
+.actor-pfp{
+    height: 175px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.actors img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+.actor .actor-info{
+    padding: 10px;
+}
+.actor .actor-name{
+    margin-bottom: 7px;
+    font-size: 1rem;
+    font-weight: 700;
+}
+.view-cast{
+    width: 150px;
+    flex-shrink: 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.actors a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* the media section */
+
+.media-header{
+    display: flex;
+    align-items: center;
+    
+}
+
+.media-header h1{ font-size: 1.2rem; }
+.view-media{
+    margin-left: 50px;
+}
+.media-header .view-media button{
+    color: #000; 
+    font-size: 1.1rem;
+    padding: 0;
+    margin-left: 20px;
+    position: relative;
+}
+.media-header .view-media button::before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+    width: 0%;
+    height: 2px;
+    border-radius: 10px;
+    background: #0a1226;
+    transition: width .2s ease-in;
+}
+.media-header .view-media button:hover::before{
+    width: 100%;
+}
+.view-media button .media-number{
+    font-size: 1rem;
+    color: #717171;
+}
+
+.details-container .media{
+    display: flex;
+    overflow-x: scroll;
+}
+
+.main-poster{
+    height: 300px;
+}
+.main-poster img{
+    height: 100%;
+}
+
+/* other info section */
+
+.other-info{
+    padding: 15px;
+    margin-top: 100px;
+    grid-row: span 2;
+    border: 1px solid #00000042;
+    border-radius: 7px;
+    box-shadow: -50px 0px 100px #ffffff;
+}
+.social-links{
+    display: flex;
+}
+
+.link:not(:last-child)::after {
+    content: '|';
+    margin: 0 10px;
+}
+
+.social-links a{
+    color: #000;
+    font-size: 1.3rem; 
+    transition: color .15s linear;
+}
+
+    .facebook:hover{
+        color: 	#1877F2;
+    }
+    .instagram:hover{
+        color: 	#E1306C;
+    }
+    .twitter:hover{
+        color: 	#1DA1F2;
+    }
+
+
+
+.comp-logo{
+    margin: 20px auto;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    padding: 5px;
+    /* border-bottom: 1px solid #000; */
+}
+
+.comp-logo:not(:last-child)::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #00000082;
+    margin-top: 10px;
+}
+
+.comp-logo img{
+    width:100px;
+}
+
+.other-info p{
+    font-weight: bold;
+    margin: 20px 10px;
+}
+.other-info p span{
+    display: block;
+    font-weight: 100;
+    margin-top: 7px;
+    font-size: .9rem;
+    color: #000000de;
+}
+
+.production_companies{ margin-top: 30px;}
+
+/* the grid */
+.sections{
+    display: grid;
+    grid-template-columns: calc(100vw - 350px) 350px;
+    grid-template-rows: 1fr 1fr;
+}
+
+.s{
+    grid-column: calc(100vw - 300px);
+    margin: 100px 0 0 25px;
+    
+}
+
+/* fav btns */
+
+.details-container .fav-btns{
+    position: absolute;
+    z-index: 80;
+    top: 5%;
+    right: 1%;
+}
+.details-container .fav-btns button {
+    font-size: 2rem;
+    transition: all .2s ease;
+}
+
+.details-container .fav-btn:hover{
+    background-color: #ff0046;
+}
+
+.details-container .unfav-btn:hover{
+    background-color: #dedede;
+}
+
+
+/* Media fucking quries */
+
+
+@media (min-width: 850px){
+    .backdrop {
+        background-position: 0% center;
+    }
+}
+
+/* main */
+@media (max-width: 850px) {
+    /* HEADER SECTION */
+    .details-header {
+        height: auto; 
+        min-height: auto;
+    }
+
+    .backdrop {
+        background-position: center;
+        height: 300px; 
+        right: 0;
+        left: auto;
+    }
+
+    .content {
+        background: linear-gradient(to bottom, 
+                transparent 0%, 
+                #8bc5fb7a 400px,    
+                #1a1a1a 100%);
+        height: auto; 
+        grid-template-columns: 1fr;
+        padding: 20px 15px;
+        gap: 30px;
+    }
+
+    /* make fonts slight darker */
+    .content .movie-title{
+        color: #716f6f;
+    }
+
+    .poster img {
+        width: 250px; 
+        max-width: 100%;
+    }
+
+    .info {
+        text-align: left;
+        padding: 0 10px;
+        color: #1a1a1a;
+    }
+
+    .info .title {
+        font-size: 1.6rem; 
+        color: #000;
+    }
+
+    .info p {
+        color: #ccc; 
+    }
+
+    .release-date {
+        font-size: 1.5rem;
+        color: #333;
+    }
+    
+    .movie-tagline p{
+        color: #444;
+    }
+
+    .info ul {
+        flex-wrap: wrap; 
+        font-size: 0.9rem;
+        color: #000;
+    }
+
+    .people {
+        width: 100%; 
+        gap: 20px;
+    }
+
+    .people .role span,
+    .people .role p {
+        color: #ccc
+    }
+
+    /* SECTIONS  */
+    .sections {
+        display: block; 
+        padding: 0 15px;
+    }
+
+    .s {
+        margin: 50px 0 50px 0; 
+    }
+
+    /* CREDITS SECTION */
+    .credits h1 {
+        font-size: 1.3rem;
+    }
+
+    .actor {
+        width: 120px;
+        min-height: 220px;
+    }
+
+    .actor-pfp {
+        height: 150px;
+    }
+
+    /* MEDIA SECTION */
+    .media-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .view-media {
+        margin-left: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .media-header .view-media button {
+        margin-left: 0;
+        font-size: 1rem;
+    }
+
+    .media{
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    /* OTHER INFO SECTION */
+    .other-info {
+        margin-top: 50px;
+        grid-row: auto; 
+    }
+
+    .comp-logo {
+        width: 90%;
+    }
+
+    /* FAV BUTTONS */
+    .details-container .fav-btns {
+        top: 3%;
+        right: 3%;
+    }
+
+    .details-container .fav-btns button {
+        font-size: 1.5rem;
+    }
+}
+
+
+/* adjust poster width for phoone screens */
+@media (max-width: 500px) {
+    .poster img{ width: 160px; }
+}

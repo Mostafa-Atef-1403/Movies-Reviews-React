@@ -1,0 +1,47 @@
+nav{
+    width: 100%;
+    height: 70px;
+    padding: 0 1rem;
+    background-color: #9ffafa;   
+    background: linear-gradient(to right, #43ffff, #326cff); 
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .logo{
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: transparent;
+    -webkit-text-stroke: 1px #ff7700; 
+    transition: all .2s linear;
+}
+
+nav .logo:hover{
+    -webkit-text-stroke-color: #ff6200;
+}
+
+nav button{
+    font-size: 1.1rem;
+    background: transparent;
+    position: relative;
+}
+
+nav button::after {
+    content: '';
+    width: 0%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background-color: brown;
+    border-radius: 100px;
+    transition: all .2s ease;
+}
+nav button:hover:after{
+    width: 100%;
+}
+

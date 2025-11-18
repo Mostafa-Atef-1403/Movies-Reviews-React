@@ -1,0 +1,181 @@
+/* --- Container --- */
+a{
+    text-decoration: none;
+    color: #bbb;
+}
+.movies-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+/* --- Card --- */
+.movie-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #1a1a1a;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.movie-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.6);
+}   
+
+/* --- Poster --- */
+.movie-poster {
+    position: relative;
+    width: 100%;
+    height: 330px;
+    overflow: hidden;
+}   
+
+.movie-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    transition: all 0.5s ease;
+}
+
+.movie-card:hover .movie-poster img {
+    transform: scale(1.1); 
+}
+
+/* --- Rating --- */
+.rating {
+    position: absolute;
+    top: 10px;
+    left: -60px;
+    opacity: 0;
+    background: rgba(0,0,0,0.7);
+    padding: 4px 10px;
+    border-radius: 0 6px 6px 0;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: left 0.3s ease;
+    z-index: 10;
+}
+
+.movie-card:hover .rating {
+    left: 0; 
+    opacity: 1;
+}
+
+/* --- Actions --- */
+.act-btns {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 8px;
+    opacity: 0;
+    transition: right 0.3s ease;
+    z-index: 10;
+}
+
+.act-btns button {
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    /* display: none; */
+}
+.fav-btn{
+    color: #fff;
+    background: rgba(0,0,0,0.7);
+    border: 1px solid #bbb;
+}
+.unfav-btn{
+    color: #ff0046;
+    
+}
+.fav-btn i{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.act-btns .fav-btn:hover {
+    background: #ff0046cc;
+    border: none;
+}
+.act-btns .unfav-btn:hover {
+    background-color: #bbb;
+}
+
+/*  */
+
+    /* .act-btns button.active{
+        display: block;
+    } */
+
+/*  */
+
+.movie-card:hover .act-btns {
+    opacity: 1;
+}
+
+/* --- Info --- */
+.movie-info {
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.movie-title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+    transition: color 0.3s;
+}
+
+.movie-card:hover .movie-title {
+    color: #ff0046;
+}
+
+.movie-date {
+    font-size: 0.85rem;
+    color: #bbb;
+}
+
+/* --- Summary overlay --- */
+.movies-container .movie-summary {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    color: #eee;
+    opacity: 0;
+    padding: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    overflow-y: auto;
+    transition: all 0.4s ease;
+
+    display: flex;    
+    flex-direction: column;
+    justify-content: center;
+
+
+}
+
+.movies-container .movie-summary p{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.movie-card:hover .movie-summary {
+    opacity: 1;
+    visibility: visible;
+}
